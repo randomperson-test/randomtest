@@ -23,7 +23,7 @@ st.title("🍕 Nhà hàng Góc Phố")
 st.write("✨ Chào mừng bạn đến với nhà hàng Góc Phố✨")
 
 st.image(
-    "https://th.bing.com/th/id/OIP.wcVpMmkQ4P8IFyM2NlMy2gHaEc?r=0&o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3",
+    "https://tse3.mm.bing.net/th/id/OIP.Te9cWddQRxl-3_PBlmzxNwHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
     use_container_width=True
 )
 
