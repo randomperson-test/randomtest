@@ -3,7 +3,7 @@ import pandas as pd
 from io import BytesIO
 
 st.set_page_config(
-    page_title="Nhà hàng ABC",
+    page_title="Nhà hàng Góc Phố",
     page_icon="🍽️",
     layout="wide"
 )
@@ -19,8 +19,8 @@ def tao_file_excel(df):
     return processed_data
 
 
-st.title("🍕 Nhà hàng ABC")
-st.write("✨ Chào mừng bạn đến với nhà hàng ABC ✨")
+st.title("🍕 Nhà hàng Góc Phố")
+st.write("✨ Chào mừng bạn đến với nhà hàng Góc Phố✨")
 
 st.image(
     "https://th.bing.com/th/id/OIP.wcVpMmkQ4P8IFyM2NlMy2gHaEc?r=0&o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3",
@@ -111,7 +111,7 @@ for nhom, ds_mon in menu.items():
                     key=mon["ten"]
                 )
 
-if st.button("💳 Thanh toán"):
+if st.button("💳 Xác nhận & Thanh toán"):
 
     tong_mon = sum(so_luong.values())
 
