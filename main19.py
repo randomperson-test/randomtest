@@ -98,7 +98,7 @@ for nhom, ds_mon in menu.items():
     cols = st.columns(4)
 
     for i, mon in enumerate(ds_mon):
-        with cols[i % 2]:
+        with cols[i]:
             with st.container(border=True):
                 st.image(mon["img"], width=350)
                 st.subheader(mon["ten"])
