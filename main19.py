@@ -100,7 +100,7 @@ for nhom, ds_mon in menu.items():
     for i, mon in enumerate(ds_mon):
         with cols[i]:
             with st.container(border=True):
-                st.image(mon["img"], width=350)
+                st.image(mon["img"], width=500)
                 st.subheader(mon["ten"])
                 st.write(f'{mon["gia"]:,} VNĐ')
 
