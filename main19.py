@@ -95,12 +95,12 @@ for nhom, ds_mon in menu.items():
     st.divider()
     st.header(nhom)
 
-    cols = st.columns(2)
+    cols = st.columns(4)
 
     for i, mon in enumerate(ds_mon):
         with cols[i % 2]:
             with st.container(border=True):
-                st.image(mon["img"], width=250)
+                st.image(mon["img"], width=350)
                 st.subheader(mon["ten"])
                 st.write(f'{mon["gia"]:,} VNĐ')
 
@@ -138,12 +138,7 @@ if st.button("💳 Xác nhận & Thanh toán"):
                     "Thành tiền": thanh_tien_mon
                 })
 
-    giam = 0
-
-    if tong >= 300000:
-        giam = tong * 0.1
-
-    thanh_tien = tong - giam
+    thanh_tien = tong
 
     st.success("✅ Thanh toán thành công!")
 
@@ -160,9 +155,6 @@ if st.button("💳 Xác nhận & Thanh toán"):
     st.divider()
 
     st.write(f'💵 Tổng tiền: {tong:,} VNĐ')
-
-    if giam > 0:
-        st.write(f'🎁 Giảm giá: -{giam:,.0f} VNĐ')
 
     st.subheader(f'💰 Thành tiền: {thanh_tien:,.0f} VNĐ')
 
