@@ -1,8 +1,8 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-
-df = pd.read_csv("data2.csv")
+file= "data2.csv"
+df = pd.read_csv(file)
 
 st.dataframe(df)
 
@@ -20,4 +20,4 @@ if st.button("Random"):
             size=len(randomized_df)
         )
 
-    randomized_df.to_csv(df, index=False)
+    randomized_df.to_csv(file, index=False)
