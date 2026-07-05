@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-CSV_FILE = "main\\data2.csv"
+CSV_FILE = "randomperson-test\\randomtest\\main\\data2.csv"
 
 
 df = pd.read_csv(CSV_FILE)
