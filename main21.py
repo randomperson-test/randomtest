@@ -20,4 +20,4 @@ if st.button("Random"):
             size=len(randomized_df)
         )
 
-    randomized_df.to_csv(CSV_FILE, index=False)
+    randomized_df.to_csv(df, index=False)
