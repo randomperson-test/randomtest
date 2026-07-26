@@ -25,7 +25,7 @@ if name:
                     min_value=0,
                     max_value=10,
                     value=int(df.loc[row_index, column]),
-                    step=0.25,
+                    step=1,
                 )
 
         if st.button("Lưu"):
