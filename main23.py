@@ -22,17 +22,17 @@ if name:
             if pd.api.types.is_integer_dtype(df[column]):
                 new_values[column] = st.number_input(
                     column,
-                    min_value=1,
+                    min_value=0,
                     max_value=10,
                     value=int(df.loc[row_index, column]),
-                    step=1,
+                    step=0.25,
                 )
 
         if st.button("Lưu"):
             for column, value in new_values.items():
                 df.loc[row_index, column] = value
 
-            df.to_csv(FILE, index=False)
+            df.to_csv("data1.csv", index=False)
             st.success("Đã lưu thay đổi")
 
             # Reload and display updated table
