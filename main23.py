@@ -21,9 +21,6 @@ if name:
     if name in df["Ho ten"].values:
 
         row_index = df[df["Ho ten"] == name].index[0]
-
-        st.success(f"Xin chào, {name}!")
-
         if st.button("Đặt tất cả điểm thành 10"):
 
             # Set every integer column to 10
