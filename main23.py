@@ -1,42 +1,18 @@
 import streamlit as st
 import pandas as pd
 
-FILE = "data1.csv"
+data = pd.read_csv("data1.csv")
+st.dataframe(data)
 
-# Load CSV
-df = pd.read_csv(FILE)
-df.columns = df.columns.str.strip()
+ten = st.text_input("Điền tên của bạn")
 
-# Show current CSV
-st.subheader("Dữ liệu hiện tại")
-st.dataframe(df, use_container_width=True)
+if st.button("Đặt tất cả điểm thành 10"):
+    if ten in data["Ho ten"].values:
+        data.loc[data["Ho ten"] == ten, data.columns[1:]] = 10
 
-st.divider()
+        data.to_csv("data1.csv", index=False)
 
-# Enter name
-name = st.text_input("Điền tên của bạn")
-
-if name:
-    # Check if the name exists
-    if name in df["Ho ten"].values:
-
-        row_index = df[df["Ho ten"] == name].index[0]
-        if st.button("Đặt tất cả điểm thành 10"):
-
-            # Set every integer column to 10
-            for column in df.columns:
-                if column != "Ho ten" and pd.api.types.is_integer_dtype(df[column]):
-                    df.loc[row_index, column] = 10
-
-            # Save changes
-            df.to_csv(FILE, index=False)
-
-            st.success("Đã cập nhật điểm")
-
-            # Reload and display updated table
-            df = pd.read_csv(FILE)
-            st.subheader("Dữ liệu sau khi cập nhật")
-            st.dataframe(df, use_container_width=True)
-
+        st.success("Đã cập nhật")
+        st.dataframe(pd.read_csv("data1.csv"))
     else:
         st.error("Không tìm thấy tên.")
